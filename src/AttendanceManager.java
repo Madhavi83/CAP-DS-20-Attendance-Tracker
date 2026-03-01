@@ -63,6 +63,7 @@ public class AttendanceManager {
 
     // Generate sorted attendance report
     public void generateReport() {
+
         if (students.isEmpty()) {
             System.out.println("No students available.");
             return;
@@ -74,10 +75,21 @@ public class AttendanceManager {
                 Double.compare(s2.getAttendancePercentage(), s1.getAttendancePercentage())
         );
 
-        System.out.println("Attendance Report (Highest to Lowest):");
+        System.out.println("\n--------------------------------------------------------------");
+        System.out.printf("%-10s %-15s %-10s %-10s %-10s\n",
+                "Roll No", "Name", "Total", "Attended", "%");
+        System.out.println("--------------------------------------------------------------");
+
         for (Student s : studentList) {
-            System.out.println(s);
+            System.out.printf("%-10d %-15s %-10d %-10d %-10.2f\n",
+                    s.getRollNumber(),
+                    s.getName(),
+                    s.getTotalClasses(),
+                    s.getAttendedClasses(),
+                    s.getAttendancePercentage());
         }
+
+        System.out.println("--------------------------------------------------------------");
     }
 
     // Start new day (clear daily queue)
