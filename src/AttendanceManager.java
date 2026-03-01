@@ -79,4 +79,10 @@ public class AttendanceManager {
             System.out.println(s);
         }
     }
+
+    // Start new day (clear daily queue)
+    public void startNewDay() {
+        dailyAttendanceQueue.clear();
+        System.out.println("New day started. Daily attendance cleared.");
+    }
 }

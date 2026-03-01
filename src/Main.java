@@ -14,7 +14,8 @@ public class Main {
             System.out.println("3. View Student");
             System.out.println("4. View Daily Attendance");
             System.out.println("5. Generate Attendance Report");
-            System.out.println("6. Exit");
+            System.out.println("6. Start New Day");
+            System.out.println("7. Exit");
             System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
@@ -53,6 +54,10 @@ public class Main {
                     break;
 
                 case 6:
+                    manager.startNewDay();
+                    break;
+
+                case 7:
                     System.out.println("Exiting program...");
                     scanner.close();
                     System.exit(0);
